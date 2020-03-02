@@ -1,0 +1,32 @@
+# Python file with GUIs for Database file using dummy variables. 
+
+from easygui import *
+
+msg = "Enter field values:"
+title = "Table creator"
+fieldNames = []
+fieldValues = []
+fields = ""
+
+# loop to store fields of a table
+
+tableName = enterbox("Enter Table name to be created: ","Table name")
+
+while fields != "0":
+    fields = enterbox("Enter field names (Enter 0 when done)", "box")
+    if fields != "0":
+        fieldNames.append(fields)
+    else:
+        break
+
+print(fieldNames)
+
+
+# msg box to store records
+
+fieldValues = multenterbox(msg, title, fieldNames) 
+print(fieldValues)
+
+# run sql with a formatted string using user inputted values
+
+  
